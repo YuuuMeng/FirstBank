@@ -1,19 +1,17 @@
 import java.util.Scanner;
 
 public class Account {
-    //Class Variables
     int balance;
     int previousTransaction;
     String customerName;
     String customerID;
 
-    //Class constructor
     Account(String cname, String cid) {
         customerName = cname;
         customerID = cid;
     }
 
-    //Function for Depositing money
+
     void deposit(int amount) {
         if (amount != 0) {
             balance = balance + amount;
@@ -21,7 +19,6 @@ public class Account {
         }
     }
 
-    //Function for Withdrawing money
     void withdraw(int amount) {
         if (amount != 0) {
             balance = balance - amount;
@@ -29,7 +26,7 @@ public class Account {
         }
     }
 
-    //Function showing the previous transaction
+
     void getPreviousTransaction() {
         if (previousTransaction > 0) {
             System.out.println("Deposited: " + previousTransaction);
@@ -40,7 +37,6 @@ public class Account {
         }
     }
 
-    //Function calculating interest of current funds after a number of years
     void calculateInterest(int years) {
         double interestRate = .0185;
         double newBalance = (balance * interestRate * years) + balance;
@@ -48,7 +44,7 @@ public class Account {
         System.out.println("After " + years + " years, you balance will be: " + newBalance);
     }
 
-    //Function showing the main menu
+
     void showMenu() {
         char option = '\0';
         Scanner scanner = new Scanner(System.in);
